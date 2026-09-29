@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { NAV, mailto, CONTACT_EMAIL } from '@/lib/site';
+import { NAV, CONTACT_EMAIL, headerCta } from '@/lib/site';
 import YmdtLogo from '@/components/brand/YmdtLogo';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger, SheetClose, SheetDescription } from '@/components/ui/sheet';
 
-export default function Header({ tone = 'paper' }: { tone?: 'paper' | 'night' }) {
+export default function Header({ tone = 'paper', solid = false }: { tone?: 'paper' | 'night'; solid?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [overNight, setOverNight] = useState(tone === 'night');
   const pathname = usePathname();
@@ -39,12 +39,15 @@ export default function Header({ tone = 'paper' }: { tone?: 'paper' | 'night' })
       cancelAnimationFrame(raf);
     };
   }, []);
-  const light = overNight;
+  const light = !solid && overNight;
+  const cta = headerCta(pathname);
   return (
     <header
       className={cn(
         'fixed inset-x-0 top-0 z-40 transition-[background-color,box-shadow,backdrop-filter] duration-500 ease-hani',
-        scrolled
+        solid
+          ? 'bg-paper/95 shadow-[0_1px_0_var(--color-line-soft)] backdrop-blur-xl'
+          : scrolled
           ? light
             ? 'bg-night/55 shadow-[0_1px_0_rgba(255,255,255,.06)] backdrop-blur-xl'
             : 'bg-paper/82 shadow-[0_1px_0_var(--color-line-soft)] backdrop-blur-xl backdrop-saturate-150'
@@ -80,7 +83,7 @@ export default function Header({ tone = 'paper' }: { tone?: 'paper' | 'night' })
 
         <div className="flex items-center gap-2">
           <a
-            href={mailto('HANI 도입 상담 문의')}
+            href={cta.href}
             className={cn(
               'hidden h-10 items-center rounded-hani-btn px-4 text-[14px] font-semibold transition-colors duration-300 sm:inline-flex',
               light
@@ -88,7 +91,7 @@ export default function Header({ tone = 'paper' }: { tone?: 'paper' | 'night' })
                 : 'bg-brand text-paper shadow-hani-btn hover:bg-brand-hover',
             )}
           >
-            도입 상담
+            {cta.label}
           </a>
           <Sheet>
             <SheetTrigger
@@ -121,10 +124,10 @@ export default function Header({ tone = 'paper' }: { tone?: 'paper' | 'night' })
                   ))}
                 </nav>
                 <a
-                  href={mailto('HANI 도입 상담 문의')}
+                  href={cta.href}
                   className="mt-auto inline-flex h-14 items-center justify-center rounded-hani-btn bg-brand text-[15px] font-semibold text-paper shadow-hani-btn"
                 >
-                  도입 상담 · {CONTACT_EMAIL}
+                  {cta.label} · {CONTACT_EMAIL}
                 </a>
               </div>
             </SheetContent>

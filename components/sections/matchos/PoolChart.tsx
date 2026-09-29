@@ -32,7 +32,7 @@ export default function PoolChart() {
                 className={`mx-auto w-[78%] origin-bottom rounded-t-[3px] ${
                   gold
                     ? 'bg-[linear-gradient(180deg,#d8c29a_0%,#b39a72_100%)] shadow-[0_0_60px_-10px_rgba(200,176,138,.55)]'
-                    : 'bg-[#c7c0d4]'
+                    : 'bg-[#ddd2fb]'
                 }`}
                 style={{ height: `${pct}%` }}
                 initial={reduce ? false : { scaleY: 0 }}

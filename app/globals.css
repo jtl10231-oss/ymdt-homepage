@@ -15,11 +15,22 @@
   --color-brand: #440382;
   --color-brand-hover: #38026b;
   --color-brand-deep: #2e0257;
-  --color-brand-accent: #8b5eb5;
-  --color-brand-accent-on-ink: #b48ed6;
-  --color-brand-subtle: #f0eafa;
-  --color-brand-subtle-alt: #f4eeff;
-  --color-brand-subtle-hover: #ddd0f2;
+  /* 강조색 = 로고·인장과 같은 보라. (이전 #8B5EB5는 분홍 쪽으로 9° 틀어진 탁한 연보라였다) */
+  --color-brand-accent: #440382;
+  --color-brand-accent-on-ink: #c5b0f7;
+  --color-brand-subtle: #f1ecff;
+  --color-brand-subtle-alt: #f7f5ff;
+  --color-brand-subtle-hover: #ddd2fb;
+
+  /* 보라 단계표 — 모두 #440382와 같은 색상각(OKLCH h 297°)에서 명도·채도만 바꿨다 */
+  --color-plum-50: #f7f5ff;
+  --color-plum-100: #f1ecff;
+  --color-plum-150: #e9e1fd;
+  --color-plum-200: #ddd2fb;
+  --color-plum-300: #c5b0f7;
+  --color-plum-400: #9f78e9;
+  --color-plum-500: #7d42d3;
+  --color-plum-600: #5f17ae;
 
   /* --- 금박 --- */
   --color-gold: #a8873d;
@@ -41,10 +52,11 @@
   --color-line-soft: #f0ebe3;
 
   /* --- 밤 (다크 섹션) --- */
-  --color-night: #07031a;
-  --color-night-2: #120724;
-  --color-night-3: #1d0b35;
-  --color-lavender: #e4dde9;
+  /* 밤: 남색빛(-10°)이던 검정을 같은 보라 색상각의 먹보라로 */
+  --color-night: #090318;
+  --color-night-2: #130527;
+  --color-night-3: #1d0839;
+  --color-lavender: #e9e1fd;
   --color-sage: #e1e7e3;
   --color-sand: #e5ddd1;
 
@@ -59,7 +71,7 @@
   --color-background: #fffefb;
   --color-foreground: #221a28;
   --color-border: #e8e1d8;
-  --color-ring: #8b5eb5;
+  --color-ring: #7d42d3;
   --color-muted: #f2eee7;
   --color-muted-foreground: #6e6376;
   --color-popover: #fffefb;
@@ -160,7 +172,7 @@
   background-color: var(--color-night);
   background-image:
     radial-gradient(120% 80% at 50% 110%, rgba(68, 3, 130, 0.55) 0%, rgba(46, 2, 87, 0.18) 45%, transparent 70%),
-    radial-gradient(60% 50% at 85% 0%, rgba(139, 94, 181, 0.16) 0%, transparent 70%),
+    radial-gradient(60% 50% at 85% 0%, rgba(159, 120, 233, 0.14) 0%, transparent 70%),
     radial-gradient(50% 40% at 10% 20%, rgba(200, 176, 138, 0.08) 0%, transparent 70%);
 }
 

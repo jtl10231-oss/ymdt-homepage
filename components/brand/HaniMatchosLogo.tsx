@@ -17,7 +17,7 @@ export default function HaniMatchosLogo({
     <span className={`inline-flex items-center gap-3 select-none ${paper ? 'text-paper' : 'text-ink'} ${className}`}>
       <HaniMark size={d.mark} strokeWidth={3.2} title="HANI MatchOS" />
       <span className="flex flex-col leading-none">
-        <HaniWordmark height={d.word} accent={paper ? 'var(--color-champagne)' : 'var(--color-brand-accent)'} weight={2} />
+        <HaniWordmark height={d.word} accent={paper ? 'var(--color-champagne)' : 'var(--color-brand)'} weight={2} />
         <span
           className={`mt-[0.45em] font-bold tracking-[0.55em] ${paper ? 'text-white/60' : 'text-ink-muted'}`}
           style={{ fontSize: d.sub }}

@@ -4,7 +4,7 @@
 export default function HaniWordmark({
   height = 20,
   className = '',
-  accent = 'var(--color-brand-accent)',
+  accent = 'var(--color-brand)',
   weight = 1.6,
 }: {
   height?: number;

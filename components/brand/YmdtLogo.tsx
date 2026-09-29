@@ -16,7 +16,7 @@ export default function YmdtLogo({
   return (
     <span className={`inline-flex items-center gap-2.5 select-none ${dark ? 'text-paper' : 'text-ink'} ${className}`}>
       <YmdtMark size={d.mark} tone={dark ? 'paper' : 'plum'} title="YMDT 로고" />
-      <YmdtWordmark height={d.word} accent={dark ? 'var(--color-champagne)' : 'var(--color-brand-accent)'} />
+      <YmdtWordmark height={d.word} accent={dark ? 'var(--color-champagne)' : 'var(--color-brand)'} />
     </span>
   );
 }

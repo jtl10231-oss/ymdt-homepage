@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer data-header="night" className="relative bg-night text-white/60">
       <div className="hairline-gold opacity-40" />
-      <div className="mx-auto grid w-full max-w-[1320px] gap-12 px-5 py-16 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr_1fr] lg:px-12">
+      <div className="mx-auto grid w-full max-w-[1320px] gap-12 px-5 py-16 sm:px-8 md:grid-cols-[1.6fr_1fr_1fr] lg:px-12">
         <div>
           <YmdtLogo tone="paper" />
           <p className="mt-6 font-display text-[19px] leading-snug text-paper/90">{BRAND.slogan}</p>
@@ -16,15 +16,8 @@ export default function Footer() {
         <div>
           <p className="eyebrow text-white/35">Products</p>
           <ul className="mt-5 space-y-3 text-[14.5px]">
-            <li><Link className="hover:text-white" href="/matchos/">HANI MatchOS</Link></li>
             <li><Link className="hover:text-white" href="/hani-app/">HANI 앱</Link></li>
-          </ul>
-        </div>
-        <div>
-          <p className="eyebrow text-white/35">Company</p>
-          <ul className="mt-5 space-y-3 text-[14.5px]">
-            <li><Link className="hover:text-white" href="/#principles">우리가 지키는 원칙</Link></li>
-            <li><Link className="hover:text-white" href="/#contact">문의</Link></li>
+            <li><Link className="hover:text-white" href="/matchos/">HANI MatchOS</Link></li>
           </ul>
         </div>
         <div>
@@ -36,7 +29,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="mx-auto flex w-full max-w-[1320px] flex-col items-start justify-between gap-4 border-t border-white/8 px-5 py-7 text-[12.5px] text-white/35 sm:flex-row sm:items-center sm:px-8 lg:px-12">
-        <span>© 2026 YMDT. All rights reserved.</span>
+        <span>© 2026 YMDT 주식회사. All rights reserved.</span>
         <HaniWordmark height={12} className="text-white/35" accent="var(--color-champagne)" />
       </div>
     </footer>

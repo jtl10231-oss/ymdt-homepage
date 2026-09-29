@@ -54,7 +54,7 @@ export function Challenges() {
         <Stagger className="mt-14 grid gap-4 sm:grid-cols-2 md:mt-20 lg:grid-cols-3 lg:gap-5">
           {PAINS.map(({ icon: Icon, t, d, a }) => (
             <StaggerItem key={t}>
-              <article className="group relative flex h-full flex-col rounded-hani border border-line bg-paper p-7 shadow-hani-card transition-[box-shadow,border-color,background-color] duration-500 ease-hani hover:border-brand-subtle-hover hover:bg-[#fdfbff] hover:shadow-hani-hover md:p-8">
+              <article className="group relative flex h-full flex-col rounded-hani border border-line bg-paper p-7 shadow-hani-card transition-[box-shadow,border-color,background-color] duration-500 ease-hani hover:border-brand-subtle-hover hover:bg-[#f7f5ff] hover:shadow-hani-hover md:p-8">
                 <Icon {...ICON} className="text-brand-accent" aria-hidden />
                 <h3 className="mt-6 text-[19px] font-bold tracking-[-0.01em] text-ink">{t}</h3>
                 <p className="mt-3 text-[15px] leading-[1.7] text-ink-sub">{d}</p>
@@ -175,7 +175,7 @@ const CASES = [
         <circle cx="26" cy="13" r="10.5" stroke="currentColor" strokeWidth="1.6" />
       </svg>
     ),
-    bg: 'bg-[#ece2e4]',
+    bg: 'bg-[#f1ecff]',
     fg: 'text-brand-accent',
     when: '우리 업체 안에서는 재혼 조건에 맞는 후보가 부족할 때',
     then: '파트너 후보까지 검토 범위를 넓힙니다',

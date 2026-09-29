@@ -24,7 +24,7 @@ function Mascot({ src, alt, className, float = true }: { src: string; alt: strin
 /* ───────── 히어로 ───────── */
 export function AppHero() {
   return (
-    <section className="relative overflow-hidden bg-[radial-gradient(120%_90%_at_80%_20%,#efe6ff_0%,#f7f3ff_38%,#fbfaf6_72%)] pt-28 pb-20 md:pt-36 md:pb-28">
+    <section className="relative overflow-hidden bg-[radial-gradient(120%_90%_at_80%_20%,#e9e1fd_0%,#f7f5ff_38%,#fbfaf6_72%)] pt-28 pb-20 md:pt-36 md:pb-28">
       {/* 장식: 달·반짝임·하트 (사주앱 에셋) */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={asset('/brand/deco-moon.svg')} alt="" aria-hidden className="absolute top-[18%] right-[8%] hidden w-14 opacity-80 animate-drift md:block" style={{ animationDelay: '1.2s' }} />
@@ -63,7 +63,7 @@ export function AppHero() {
           </div>
 
           <Reveal delay={0.15} className="relative mx-auto w-full max-w-[560px]">
-            <div className="absolute inset-[8%] rounded-full bg-[radial-gradient(closest-side,rgba(139,94,181,.35),transparent)] blur-2xl" aria-hidden />
+            <div className="absolute inset-[8%] rounded-full bg-[radial-gradient(closest-side,rgba(159,120,233,.35),transparent)] blur-2xl" aria-hidden />
             <div className="relative ml-auto w-[54%] rotate-[4deg]">
               <PhoneFrame screenKey="saju-insight" alt="HANI 앱 나의 인사이트 화면: 성향 요약 레이더 차트" priority />
             </div>
@@ -145,7 +145,7 @@ function FeatureBlock({ f, flip }: { f: Feature; flip: boolean }) {
             {f.extra}
           </div>
           <Reveal className="relative mx-auto w-full max-w-[560px]" delay={0.1}>
-            <div className="absolute inset-[6%] rounded-full bg-[radial-gradient(closest-side,rgba(139,94,181,.22),transparent)]" aria-hidden />
+            <div className="absolute inset-[6%] rounded-full bg-[radial-gradient(closest-side,rgba(159,120,233,.22),transparent)]" aria-hidden />
             <div className="relative flex items-end justify-center">
               {f.phones.map((p, i) => (
                 <div
@@ -248,7 +248,7 @@ const FEATURES: Feature[] = [
     ),
     mascot: { src: '/characters/hani-chat.webp', alt: '말풍선과 함께 이야기하는 하니 캐릭터' },
     phones: [{ key: 'saju-chat', alt: 'HANI 앱 하늬와 대화 화면' }],
-    tint: 'bg-[linear-gradient(180deg,#faf8f3,#f4eeff)]',
+    tint: 'bg-[linear-gradient(180deg,#faf8f3,#f1ecff)]',
   },
   {
     id: 'diary',
@@ -318,7 +318,7 @@ const FEATURES: Feature[] = [
       { key: 'saju-relation', alt: 'HANI 앱 관계 인사이트 화면' },
       { key: 'saju-diary-report', alt: 'HANI 앱 나의 기록 리포트 화면' },
     ],
-    tint: 'bg-[linear-gradient(180deg,#f4eeff,#faf8f3)]',
+    tint: 'bg-[linear-gradient(180deg,#f1ecff,#faf8f3)]',
   },
 ];
 
@@ -353,7 +353,7 @@ export function Feelings() {
         <EditorialBar en="Meet HANI" ko="하니를 소개해요" />
         <div className="mt-12 grid items-center gap-14 md:mt-16 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal className="relative mx-auto w-full max-w-[420px]">
-            <div className="absolute inset-[10%] rounded-full bg-[radial-gradient(closest-side,rgba(139,94,181,.25),transparent)]" aria-hidden />
+            <div className="absolute inset-[10%] rounded-full bg-[radial-gradient(closest-side,rgba(159,120,233,.25),transparent)]" aria-hidden />
             <Mascot src="/characters/hani-hero.webp" alt="하니 캐릭터" className="relative w-full" />
           </Reveal>
           <div>
@@ -390,7 +390,7 @@ export function Feelings() {
 export function Philosophy() {
   return (
     <section data-header="night" className="relative overflow-hidden bg-brand-deep py-24 text-paper md:py-32">
-      <div className="absolute -top-32 -right-32 size-[520px] rounded-full bg-[radial-gradient(closest-side,rgba(180,142,214,.25),transparent)]" aria-hidden />
+      <div className="absolute -top-32 -right-32 size-[520px] rounded-full bg-[radial-gradient(closest-side,rgba(197,176,247,.25),transparent)]" aria-hidden />
       <Container className="relative">
         <EditorialBar en="Not a prediction" ko="HANI가 사주를 쓰는 방법" tone="night" />
         <Reveal className="mt-12 md:mt-16">
@@ -412,7 +412,7 @@ export function Philosophy() {
 /* ───────── 마무리 ───────── */
 export function AppCTA() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-[radial-gradient(100%_100%_at_50%_0%,#f1e8ff_0%,#faf8f3_70%)] py-24 md:py-32">
+    <section id="contact" className="relative overflow-hidden bg-[radial-gradient(100%_100%_at_50%_0%,#f1ecff_0%,#faf8f3_70%)] py-24 md:py-32">
       <Container className="text-center">
         <Reveal className="mx-auto w-[46%] max-w-[260px]">
           <Mascot src="/characters/hani-relation.webp" alt="하트를 함께 안고 있는 두 하니 캐릭터" className="w-full" />

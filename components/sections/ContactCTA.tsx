@@ -27,7 +27,7 @@ export default function ContactCTA({
     <section id={id} data-header="night" className={cn('relative isolate overflow-hidden bg-night py-28 md:py-40', className)}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={asset('/images/thread-night.webp')} alt="" aria-hidden className="absolute inset-0 -z-10 h-full w-full object-cover opacity-45" loading="lazy" />
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(7,3,26,.92)_0%,rgba(7,3,26,.55)_45%,rgba(7,3,26,.94)_100%)]" aria-hidden />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(9,3,24,.92)_0%,rgba(9,3,24,.55)_45%,rgba(9,3,24,.94)_100%)]" aria-hidden />
       <Container className="text-center">
         <Reveal>
           <MandarinDucks className="mx-auto w-28 text-[var(--color-champagne)] md:w-36" />

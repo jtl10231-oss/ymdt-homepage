@@ -4,7 +4,7 @@ import { DGlyph, MGlyph, TGlyph, YGlyph } from './YmdtGlyphs';
 export default function YmdtWordmark({
   height = 20,
   className = '',
-  accent = 'var(--color-brand-accent)',
+  accent = 'var(--color-brand)',
 }: {
   height?: number;
   className?: string;

@@ -32,7 +32,7 @@ export default function HaniMark({
         </mask>
       </defs>
       {lens && (
-        <path d="M32 16.72 A15.5 15.5 0 0 1 32 43.28 A15.5 15.5 0 0 1 32 16.72 Z" fill="var(--color-brand-accent)" opacity="0.22" />
+        <path d="M32 16.72 A15.5 15.5 0 0 1 32 43.28 A15.5 15.5 0 0 1 32 16.72 Z" fill="var(--color-brand)" opacity="0.13" />
       )}
       <circle cx="24" cy="30" r="15.5" stroke="currentColor" strokeWidth={strokeWidth} mask={`url(#hm1-${uid})`} />
       <circle cx="40" cy="30" r="15.5" stroke="currentColor" strokeWidth={strokeWidth} mask={`url(#hm2-${uid})`} />

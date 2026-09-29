@@ -1,31 +1,16 @@
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
-import HomeHero from '@/components/sections/home/HomeHero';
-import { ProductDuo, Principles, MatchosTeaser, AppTeaser } from '@/components/sections/home/Sections';
-import ContactCTA from '@/components/sections/ContactCTA';
+import Gateway from '@/components/sections/home/Gateway';
+import { BRAND } from '@/lib/site';
 
+// 첫 페이지 = 두 제품 중 하나를 골라 들어가는 갈림길. 제품 설명은 각 페이지에서.
 export default function Home() {
   return (
     <>
-      <Header tone="night" />
-      <main>
-        <HomeHero />
-        <ProductDuo />
-        <Principles />
-        <MatchosTeaser />
-        <AppTeaser />
-        <ContactCTA
-          eyebrow="Let's talk"
-          title={
-            <>
-              좋은 인연을 만드는 일,
-              <br />
-              <span className="text-[var(--color-champagne)]">함께 이야기해요</span>
-            </>
-          }
-          lead="도입 상담과 제품 시연, 제휴 문의 모두 환영합니다."
-          subject="YMDT 문의"
-        />
+      <Header tone="paper" solid />
+      <main className="pt-16 md:pt-[72px]">
+        <h1 className="sr-only">YMDT — {BRAND.slogan}</h1>
+        <Gateway />
       </main>
       <Footer />
     </>

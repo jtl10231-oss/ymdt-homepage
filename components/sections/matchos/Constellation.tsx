@@ -49,8 +49,8 @@ export default function Constellation({ className }: { className?: string }) {
       <svg viewBox="0 0 800 800" className="absolute inset-0 h-full w-full" role="img" aria-label="우리 업체를 중심으로 파트너 업체들이 연결된 크로스매칭 네트워크">
         <defs>
           <radialGradient id="cst-core" cx="50%" cy="45%" r="60%">
-            <stop offset="0%" stopColor="#3a0a63" />
-            <stop offset="100%" stopColor="#1c0733" />
+            <stop offset="0%" stopColor="#38026b" />
+            <stop offset="100%" stopColor="#130527" />
           </radialGradient>
           <radialGradient id="cst-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="rgba(200,176,138,.28)" />
@@ -125,7 +125,7 @@ export default function Constellation({ className }: { className?: string }) {
               cx={n.x}
               cy={n.y}
               r={n.r}
-              fill="#1d0733"
+              fill="#1d0839"
               stroke="var(--color-champagne)"
               strokeOpacity={hover === i ? 1 : 0.55}
               strokeWidth={hover === i ? 1.6 : 1}

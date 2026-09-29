@@ -23,11 +23,16 @@ export const BRAND = {
 export const mailto = (subject: string) => `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}`;
 
 export const NAV = [
-  { href: '/matchos/', label: 'HANI MatchOS', sub: '결혼정보업체 CRM·크로스매칭' },
-  { href: '/hani-app/', label: 'HANI 앱', sub: '사주로 나를 읽는 자기이해 앱' },
-  { href: '/#principles', label: '원칙', sub: '우리가 지키는 것' },
-  { href: '/#contact', label: '문의', sub: CONTACT_EMAIL },
+  { href: '/hani-app/', label: 'HANI 앱', sub: '한 사람을 깊이 · 자기이해 앱' },
+  { href: '/matchos/', label: 'HANI MatchOS', sub: '두 사람을 가깝게 · 결혼정보업체 플랫폼' },
 ] as const;
+
+/** 페이지마다 머리 버튼을 그 제품에 맞게 */
+export function headerCta(pathname: string) {
+  if (pathname.startsWith('/hani-app')) return { label: '앱 소식 받기', href: mailto('HANI 앱 소식 받기') };
+  if (pathname.startsWith('/matchos')) return { label: '도입 상담', href: mailto('HANI MatchOS 도입 상담') };
+  return { label: '문의하기', href: mailto('YMDT 문의') };
+}
 
 /** 페이지별 공유(OG) 메타데이터 — 레이아웃 값이 덮어써지지 않도록 전부 채운다 */
 export function shareMeta(title: string, description: string, image: string, alt: string) {

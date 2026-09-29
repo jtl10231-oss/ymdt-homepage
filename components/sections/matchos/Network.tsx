@@ -28,7 +28,7 @@ export default function Network() {
           }
         />
         <Reveal className="mt-8">
-          <span className="inline-flex rounded-full bg-[#1f0a36] px-4 py-2 text-[13.5px] font-bold text-[var(--color-champagne)]">매칭풀 확장</span>
+          <span className="inline-flex rounded-full bg-[#1d0839] px-4 py-2 text-[13.5px] font-bold text-[var(--color-champagne)]">매칭풀 확장</span>
         </Reveal>
         <Constellation className="mt-6 md:mt-0" />
         <Reveal className="mt-4 md:mt-0">
@@ -49,7 +49,7 @@ export default function Network() {
           <div className="mt-14 md:mt-20">
             <PoolChart />
           </div>
-          <Reveal className="mt-16 rounded-hani-lg bg-[#1d0833] px-7 py-9 md:px-12 md:py-12">
+          <Reveal className="mt-16 rounded-hani-lg bg-[#1d0839] px-7 py-9 md:px-12 md:py-12">
             <p className="text-[clamp(1.1rem,2vw,1.5rem)] font-bold text-paper">연결되는 업체가 많아질수록</p>
             <p className="mt-2 text-[clamp(1.5rem,3vw,2.3rem)] font-bold tracking-[-0.02em] text-[var(--color-champagne)]">매칭풀은 더 넓어집니다</p>
           </Reveal>

@@ -6,7 +6,7 @@ export const YMDT_TILE = 'M16 0 H48 A16 16 0 0 1 64 16 V60 A4 4 0 0 1 60 64 H16 
 const TONES = {
   plum: { tile: '#440382', ink: '#FFFEFB', thin: '#D9C29A' },
   paper: { tile: '#FFFEFB', ink: '#2E0257', thin: '#A8873D' },
-  night: { tile: '#07031A', ink: '#FFFEFB', thin: '#C8B08A' },
+  night: { tile: '#090318', ink: '#FFFEFB', thin: '#C8B08A' },
 } as const;
 
 export function YmdtMonogram({ ink, thin }: { ink: string; thin: string }) {

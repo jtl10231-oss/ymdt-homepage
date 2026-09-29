@@ -81,7 +81,7 @@ export default function MatchosPage() {
             ].map(({ icon: Icon, t, d }) => (
               <StaggerItem key={t}>
                 <div className="h-full rounded-hani border border-white/12 bg-white/[.03] px-6 py-7 text-center">
-                  <span className="mx-auto flex size-16 items-center justify-center rounded-full border border-white/15 bg-[#1d0833] text-paper">
+                  <span className="mx-auto flex size-16 items-center justify-center rounded-full border border-white/15 bg-[#1d0839] text-paper">
                     <Icon size={28} strokeWidth={1.3} aria-hidden />
                   </span>
                   <p className="mt-5 font-display text-[22px] text-paper">{t}</p>

@@ -8,7 +8,7 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    'text-paper bg-[linear-gradient(180deg,#520a99_0%,#440382_55%,#38026b_100%)] shadow-hani-btn hover:shadow-[inset_0_1px_0_rgba(255,255,255,.12),0_16px_30px_-14px_rgba(46,2,87,.75)]',
+    'text-paper bg-[linear-gradient(180deg,#5f17ae_0%,#440382_55%,#38026b_100%)] shadow-hani-btn hover:shadow-[inset_0_1px_0_rgba(255,255,255,.12),0_16px_30px_-14px_rgba(46,2,87,.75)]',
   gold: 'text-night bg-[linear-gradient(180deg,#dcc59a_0%,#c8b08a_60%,#b99c6e_100%)] shadow-hani-gold hover:brightness-105',
   outline: 'text-ink border border-line-strong bg-paper/60 hover:border-ink hover:bg-paper',
   ghost: 'text-ink hover:bg-paper-deep',
