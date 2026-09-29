@@ -10,8 +10,8 @@
 
 | 구분 | 제품 | 대상 | 원본 경로 |
 |---|---|---|---|
-| **메인 사업** | HANI MatchOS | 결혼정보업체(대표·매니저) → B2B | `/Users/jaylee/HANI/HANI-Goonghap-MVP V2` |
-| **서브 메인 사업** | HANI 사주앱 | 일반 사용자 → B2C | `/Users/jaylee/dev/HANI 재심사용 UI` |
+| **메인 사업** | HANI MatchOS | 결혼정보업체(대표·매니저) → B2B | `HANI-Goonghap-MVP V2` 저장소 |
+| **서브 메인 사업** | HANI 사주앱 | 일반 사용자 → B2C | `HANI 재심사용 UI` 저장소 |
 | 캐릭터 | 하니 마스코트 | 사주앱 소개 페이지에 적극 활용 | `HANI 재심사용 UI/HANI_Diary_Assets 2/01_characters` |
 | 참고 | MatchOS 브로셔 16쪽 | 카피·흐름·수치 시나리오 | 첨부 PDF |
 
