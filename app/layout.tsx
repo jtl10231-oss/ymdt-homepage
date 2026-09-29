@@ -28,7 +28,13 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" suppressHydrationWarning className={`${wanted.variable} ${maru.variable}`}>
-      <body>{children}</body>
+      <body>
+        {/* 자바스크립트가 꺼진 환경에서도 등장 애니메이션 대기 중인 글자가 보이도록 */}
+        <noscript>
+          <style>{`[style*="opacity:0"]{opacity:1!important;transform:none!important;filter:none!important}`}</style>
+        </noscript>
+        {children}
+      </body>
     </html>
   );
 }
