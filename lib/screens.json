@@ -1,0 +1,170 @@
+{
+ "dashboard": {
+  "src": "/screens/matchos/dashboard.webp",
+  "w": 2880,
+  "h": 1800,
+  "top": "#faf8f4"
+ },
+ "match-candidate": {
+  "src": "/screens/matchos/match-candidate.webp",
+  "w": 2880,
+  "h": 1800,
+  "top": "#faf8f4"
+ },
+ "match-saju": {
+  "src": "/screens/matchos/match-saju.webp",
+  "w": 2880,
+  "h": 1800,
+  "top": "#faf8f4"
+ },
+ "crm-detail": {
+  "src": "/screens/matchos/crm-detail.webp",
+  "w": 2880,
+  "h": 1800,
+  "top": "#faf8f4"
+ },
+ "crm-saju": {
+  "src": "/screens/matchos/crm-saju.webp",
+  "w": 2880,
+  "h": 1800,
+  "top": "#faf8f4"
+ },
+ "intro-care": {
+  "src": "/screens/matchos/intro-care.webp",
+  "w": 2880,
+  "h": 1800,
+  "top": "#faf8f4"
+ },
+ "calendar": {
+  "src": "/screens/matchos/calendar.webp",
+  "w": 2880,
+  "h": 1800,
+  "top": "#faf8f4"
+ },
+ "ceo-dashboard": {
+  "src": "/screens/matchos/ceo-dashboard.webp",
+  "w": 2880,
+  "h": 1800,
+  "top": "#faf8f4"
+ },
+ "ceo-revenue": {
+  "src": "/screens/matchos/ceo-revenue.webp",
+  "w": 2880,
+  "h": 1800,
+  "top": "#faf8f4"
+ },
+ "m-home": {
+  "src": "/screens/matchos/m-home.webp",
+  "w": 780,
+  "h": 1688,
+  "top": "#2a0554"
+ },
+ "m-proposals": {
+  "src": "/screens/matchos/m-proposals.webp",
+  "w": 780,
+  "h": 1688,
+  "top": "#faf9f4"
+ },
+ "m-deep-report": {
+  "src": "/screens/matchos/m-deep-report.webp",
+  "w": 780,
+  "h": 1688,
+  "top": "#d5cdc1"
+ },
+ "m-schedule": {
+  "src": "/screens/matchos/m-schedule.webp",
+  "w": 780,
+  "h": 1688,
+  "top": "#faf9f4"
+ },
+ "m-care": {
+  "src": "/screens/matchos/m-care.webp",
+  "w": 780,
+  "h": 1688,
+  "top": "#faf9f4"
+ },
+ "m-profile": {
+  "src": "/screens/matchos/m-profile.webp",
+  "w": 780,
+  "h": 1688,
+  "top": "#faf9f4"
+ },
+ "m-privacy": {
+  "src": "/screens/matchos/m-privacy.webp",
+  "w": 780,
+  "h": 1688,
+  "top": "#faf9f4"
+ },
+ "saju-chat": {
+  "src": "/screens/saju/chat.webp",
+  "w": 780,
+  "h": 1688,
+  "top": "#fefefe"
+ },
+ "saju-diary": {
+  "src": "/screens/saju/diary.webp",
+  "w": 780,
+  "h": 1688,
+  "top": "#ffffff"
+ },
+ "saju-relation": {
+  "src": "/screens/saju/relation.webp",
+  "w": 780,
+  "h": 1688,
+  "top": "#ffffff"
+ },
+ "saju-insight": {
+  "src": "/screens/saju/insight.webp",
+  "w": 780,
+  "h": 1688,
+  "top": "#ffffff"
+ },
+ "saju-insight-16": {
+  "src": "/screens/saju/insight-16.webp",
+  "w": 780,
+  "h": 1688,
+  "top": "#ffffff"
+ },
+ "saju-insight-life": {
+  "src": "/screens/saju/insight-life.webp",
+  "w": 780,
+  "h": 1688,
+  "top": "#ffffff"
+ },
+ "saju-basis": {
+  "src": "/screens/saju/basis.webp",
+  "w": 780,
+  "h": 1688,
+  "top": "#ffffff"
+ },
+ "saju-diary-home": {
+  "src": "/screens/saju/diary-home.webp",
+  "w": 780,
+  "h": 1588,
+  "top": "#fbf8ff"
+ },
+ "saju-diary-create": {
+  "src": "/screens/saju/diary-create.webp",
+  "w": 780,
+  "h": 1588,
+  "top": "#fbf8ff"
+ },
+ "saju-diary-read": {
+  "src": "/screens/saju/diary-read.webp",
+  "w": 780,
+  "h": 1588,
+  "top": "#fbf8ff"
+ },
+ "saju-diary-card": {
+  "src": "/screens/saju/diary-card.webp",
+  "w": 780,
+  "h": 1588,
+  "top": "#969498"
+ },
+ "saju-diary-report": {
+  "src": "/screens/saju/diary-report.webp",
+  "w": 780,
+  "h": 1588,
+  "top": "#ffffff"
+ }
+}

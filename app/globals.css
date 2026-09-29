@@ -1,0 +1,226 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+/* ============================================================
+   YMDT · HANI 디자인 토큰
+   출처: HANI MatchOS tailwind.config.js (Design System v3),
+         HANI 사주앱 src/index.css. 값은 앱과 1:1로 맞춘다.
+   ============================================================ */
+@theme {
+  /* --- 활자 --- */
+  --font-sans: var(--font-wanted), 'Pretendard Variable', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+  --font-display: var(--font-maru), 'Noto Serif KR', 'AppleMyungjo', serif;
+
+  /* --- 플럼 (브랜드) --- */
+  --color-brand: #440382;
+  --color-brand-hover: #38026b;
+  --color-brand-deep: #2e0257;
+  --color-brand-accent: #8b5eb5;
+  --color-brand-accent-on-ink: #b48ed6;
+  --color-brand-subtle: #f0eafa;
+  --color-brand-subtle-alt: #f4eeff;
+  --color-brand-subtle-hover: #ddd0f2;
+
+  /* --- 금박 --- */
+  --color-gold: #a8873d;
+  --color-gold-bg: #f7f1e3;
+  --color-champagne: #c8b08a;
+  --color-champagne-soft: #e6d9c2;
+
+  /* --- 먹 (글자) --- */
+  --color-ink: #221a28;
+  --color-ink-sub: #6e6376;
+  --color-ink-muted: #75687c;
+
+  /* --- 종이 (표면) --- */
+  --color-paper: #fffefb;
+  --color-paper-subtle: #faf8f3;
+  --color-paper-deep: #f2eee7;
+  --color-line: #e8e1d8;
+  --color-line-strong: #d6ccbf;
+  --color-line-soft: #f0ebe3;
+
+  /* --- 밤 (다크 섹션) --- */
+  --color-night: #07031a;
+  --color-night-2: #120724;
+  --color-night-3: #1d0b35;
+  --color-lavender: #e4dde9;
+  --color-sage: #e1e7e3;
+  --color-sand: #e5ddd1;
+
+  /* --- 오행 (사주 표면 전용) --- */
+  --color-element-wood: #2d6a4f;
+  --color-element-fire: #c1121f;
+  --color-element-earth: #b5851b;
+  --color-element-metal: #6b6b6b;
+  --color-element-water: #1b4965;
+
+  /* --- shadcn 호환 시맨틱 --- */
+  --color-background: #fffefb;
+  --color-foreground: #221a28;
+  --color-border: #e8e1d8;
+  --color-ring: #8b5eb5;
+  --color-muted: #f2eee7;
+  --color-muted-foreground: #6e6376;
+  --color-popover: #fffefb;
+  --color-popover-foreground: #221a28;
+  --color-primary: #440382;
+  --color-primary-foreground: #fffefb;
+
+  /* --- 접힌 모서리: 우하단만 꺾인다 --- */
+  --radius-hani-xs: 7px 7px 2px 7px;
+  --radius-hani-btn: 8px 8px 2px 8px;
+  --radius-hani-sm: 10px 10px 2px 10px;
+  --radius-hani: 14px 14px 3px 14px;
+  --radius-hani-lg: 18px 18px 5px 18px;
+  --radius-hani-xl: 28px 28px 6px 28px;
+
+  /* --- 심도 (플럼 틴트) --- */
+  --shadow-hani-card: 0 1px 2px rgba(46, 2, 87, 0.05), 0 10px 28px -16px rgba(46, 2, 87, 0.14);
+  --shadow-hani-hover: 0 1px 2px rgba(46, 2, 87, 0.05), 0 16px 32px -16px rgba(46, 2, 87, 0.2);
+  --shadow-hani-stage: 0 24px 60px -28px rgba(46, 2, 87, 0.35);
+  --shadow-hani-float: 0 40px 90px -40px rgba(46, 2, 87, 0.45), 0 12px 30px -18px rgba(18, 2, 38, 0.3);
+  --shadow-hani-btn: inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 10px 22px -14px rgba(18, 2, 38, 0.65);
+  --shadow-hani-gold: inset 0 0 0 1px rgba(190, 155, 74, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 10px 22px -14px rgba(18, 2, 38, 0.65);
+
+  /* --- 모션 --- */
+  --ease-hani: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-ink: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* --- 브레이크포인트 --- */
+  --breakpoint-xs: 26rem;
+  --breakpoint-3xl: 112rem;
+}
+
+/* ===== Base ===== */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: 88px;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: 'ss01', 'ss02';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  ::selection {
+    background: var(--color-brand-subtle-hover);
+    color: var(--color-brand-deep);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brand-accent);
+    outline-offset: 3px;
+  }
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+}
+
+/* ===== 에디토리얼 유틸 ===== */
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility text-pretty {
+  text-wrap: pretty;
+}
+
+/* 종이 결: 아주 옅은 노이즈 */
+@utility paper-grain {
+  position: relative;
+  isolation: isolate;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.13 0 0 0 0 0.1 0 0 0 0 0.16 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* 밤 하늘 배경: 먹빛 위에 플럼이 번진다 */
+@utility bg-night-sky {
+  background-color: var(--color-night);
+  background-image:
+    radial-gradient(120% 80% at 50% 110%, rgba(68, 3, 130, 0.55) 0%, rgba(46, 2, 87, 0.18) 45%, transparent 70%),
+    radial-gradient(60% 50% at 85% 0%, rgba(139, 94, 181, 0.16) 0%, transparent 70%),
+    radial-gradient(50% 40% at 10% 20%, rgba(200, 176, 138, 0.08) 0%, transparent 70%);
+}
+
+/* 헤어라인 */
+@utility hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-line-strong) 12%, var(--color-line-strong) 88%, transparent);
+}
+
+@utility hairline-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 176, 138, 0.7) 15%, rgba(200, 176, 138, 0.7) 85%, transparent);
+}
+
+/* 스크롤바 숨김 */
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* 모션 감소: 장식 모션은 최종 상태로 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 느린 호흡 (성좌 노드) */
+@keyframes breathe {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+@utility animate-breathe {
+  animation: breathe 5.5s var(--ease-ink) infinite;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -10px, 0); }
+}
+@utility animate-drift {
+  animation: drift 7s var(--ease-ink) infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@utility animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes scrollcue {
+  0% { transform: translateY(-110%); }
+  100% { transform: translateY(320%); }
+}
