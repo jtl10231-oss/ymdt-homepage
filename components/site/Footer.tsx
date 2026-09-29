@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import YmdtLogo from '@/components/brand/YmdtLogo';
 import HaniWordmark from '@/components/brand/HaniWordmark';
-import { CONTACT_EMAIL, mailto } from '@/lib/site';
+import { BRAND, CONTACT_EMAIL, mailto } from '@/lib/site';
 
 export default function Footer() {
   return (
@@ -10,9 +10,8 @@ export default function Footer() {
       <div className="mx-auto grid w-full max-w-[1320px] gap-12 px-5 py-16 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr_1fr] lg:px-12">
         <div>
           <YmdtLogo tone="paper" />
-          <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/50">
-            좋은 인연이 더 자주 닿도록. 사람과 사람 사이의 구조를 만듭니다.
-          </p>
+          <p className="mt-6 font-display text-[19px] leading-snug text-paper/90">{BRAND.slogan}</p>
+          <p className="mt-2 max-w-xs text-[14px] leading-relaxed text-white/50">{BRAND.definition}</p>
         </div>
         <div>
           <p className="eyebrow text-white/35">Products</p>

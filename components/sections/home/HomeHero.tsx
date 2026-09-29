@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react';
 import Button from '@/components/site/Button';
 import Container from '@/components/site/Container';
+import { BRAND } from '@/lib/site';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -30,10 +31,11 @@ export default function HomeHero() {
 
   return (
     <section ref={ref} data-header="night" className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-night pb-20 md:items-center md:pb-0">
-      <motion.div style={{ y }} className="absolute inset-0 -z-20">
+      {/* 휴대폰: 영상을 키우고 위로 올려 금실 매듭이 제목 위쪽에 오도록 */}
+      <motion.div style={{ y }} className="absolute inset-0 -z-20 max-md:top-[-30%] max-md:h-[130%]">
         <video
           ref={video}
-          className="h-full w-full -scale-x-100 object-cover"
+          className="h-full w-full -scale-x-100 object-cover max-md:object-[27%_50%]"
           autoPlay
           muted
           loop
@@ -53,23 +55,28 @@ export default function HomeHero() {
         className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,3,26,.92)_0%,rgba(7,3,26,.66)_42%,rgba(7,3,26,.12)_78%),linear-gradient(180deg,rgba(7,3,26,.55)_0%,transparent_28%,transparent_62%,rgba(7,3,26,1)_100%)]"
         aria-hidden
       />
+      {/* 휴대폰: 글자가 놓이는 아래쪽을 한 번 더 눌러 금실 꼬리가 글자를 가리지 않게 */}
+      <div
+        className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,transparent_0%,transparent_30%,rgba(7,3,26,.5)_42%,rgba(7,3,26,.78)_56%,rgba(7,3,26,.9)_100%)] md:hidden"
+        aria-hidden
+      />
 
       <Container className="relative pt-32">
         <motion.div style={{ opacity: fade }}>
           <motion.p {...line(0.1)} className="eyebrow text-[var(--color-champagne)]">
             YMDT · Makers of HANI
           </motion.p>
-          <h1 className="mt-7 font-display text-[clamp(3.1rem,9vw,8.4rem)] leading-[1.06] font-normal tracking-[-0.035em] text-paper">
+          <h1 className="mt-7 font-display text-[clamp(3.1rem,7.5vw,7rem)] leading-[1.06] font-normal tracking-[-0.035em] text-paper">
             <motion.span {...line(0.2)} className="block">
-              좋은 인연이
+              {BRAND.line1}
             </motion.span>
             <motion.span {...line(0.34)} className="block">
-              더 자주 <span className="text-[var(--color-champagne)]">닿도록</span>
+              {BRAND.line2.split(' ').slice(0, -1).join(' ')}{' '}
+              <span className="text-[var(--color-champagne)]">{BRAND.line2.split(' ').at(-1)}</span>
             </motion.span>
           </h1>
           <motion.p {...line(0.5)} className="mt-8 max-w-[34rem] text-[17px] leading-[1.8] text-white/72 md:text-[19px]">
-            YMDT는 사람과 사람 사이의 구조를 만듭니다. 결혼정보업체를 위한 HANI MatchOS, 사주로 나를 읽고 대화로 나를
-            이해하는 HANI 앱.
+            {BRAND.definition} {BRAND.products}
           </motion.p>
           <motion.div {...line(0.62)} className="mt-11 flex flex-wrap gap-3">
             <Button href="/matchos/" variant="light" arrow size="lg">

@@ -1,4 +1,16 @@
 export const CONTACT_EMAIL = 'hani@ymdt.io';
+
+/** YMDT 대표 문장 — 바꿀 때는 여기만 고치면 히어로·푸터·탭 제목·공유 정보가 함께 바뀐다 */
+export const BRAND = {
+  line1: '한 사람을 깊이',
+  line2: '두 사람을 가깝게',
+  slogan: '한 사람을 깊이, 두 사람을 가깝게',
+  definition: 'YMDT는 사람을 이해하는 기술을 만듭니다.',
+  // 제품 이름이 줄바꿈으로 끊기지 않도록 붙임 공백(\u00A0) 사용
+  products: '나를 깊이 알아가는 HANI\u00A0앱, 좋은 만남을 잇는 HANI\u00A0MatchOS.',
+  description:
+    'YMDT는 사람을 이해하는 기술을 만듭니다. 나를 깊이 알아가는 HANI 앱, 결혼정보업체를 위한 CRM·크로스매칭 플랫폼 HANI MatchOS.',
+} as const;
 export const mailto = (subject: string) => `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}`;
 
 export const NAV = [

@@ -28,12 +28,12 @@ export function ProductDuo() {
   return (
     <section className="paper-grain relative bg-paper-subtle pt-24 pb-24 md:pt-32 md:pb-36">
       <Container>
-        <EditorialBar en="What we make" ko="YMDT가 만드는 두 개의 HANI" />
+        <EditorialBar en="What we make" ko="YMDT가 만드는 제품" />
         <Reveal className="mt-10 md:mt-14">
           <h2 className="font-display text-[clamp(2.1rem,4.6vw,4.25rem)] leading-[1.18] font-normal tracking-[-0.025em] text-ink">
-            사람을 잇는 일,
+            사람을 이해하는 기술을
             <br />
-            두 가지 방식으로
+            두 개의 HANI에 담았습니다
           </h2>
         </Reveal>
 
@@ -169,7 +169,8 @@ export function Principles() {
                 <span className="text-brand">더 잘 고르도록 돕습니다</span>
               </h2>
               <p className="mt-6 max-w-lg text-[17px] leading-[1.8] text-ink-sub">
-                인연은 점수로 정해지지 않습니다. HANI는 조건과 가치관, 두 사람의 의사를 함께 살피는 사람의 판단 곁에 있습니다.
+                인연은 점수로 정해지지 않습니다. HANI는 조건과 가치관, 두 사람의 의사를 함께 살피도록 도울 뿐, 마지막 결정은
+                언제나 사람이 합니다.
               </p>
             </Reveal>
             <Stagger className="mt-12 divide-y divide-line border-y border-line">
