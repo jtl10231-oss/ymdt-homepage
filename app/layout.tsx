@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { wanted, maru } from './fonts';
-import { BRAND, shareMeta } from '@/lib/site';
+import { BRAND, SITE_URL, shareMeta } from '@/lib/site';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ymdt.io'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: `YMDT — ${BRAND.slogan}`,
     template: '%s · YMDT',

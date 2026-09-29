@@ -1,3 +1,4 @@
+import { asset } from '@/lib/site';
 import Link from 'next/link';
 import Container from '@/components/site/Container';
 import SectionHead, { EditorialBar } from '@/components/site/SectionHead';
@@ -99,7 +100,7 @@ export function ProductDuo() {
               <div className="relative z-10 mt-auto flex items-end justify-between gap-2 pt-10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/characters/hani-hero.webp"
+                  src={asset('/characters/hani-hero.webp')}
                   alt="보라색 하트를 안고 있는 하니 캐릭터"
                   width={889}
                   height={1000}
@@ -144,7 +145,7 @@ export function Principles() {
             <div className="overflow-hidden rounded-hani-xl shadow-hani-stage">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/rings-hanji.webp"
+                src={asset('/images/rings-hanji.webp')}
                 alt="한지 위에 맞물린 두 개의 금반지와 금실"
                 width={1422}
                 height={1106}
@@ -273,7 +274,7 @@ export function AppTeaser() {
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/characters/hani-chat.webp"
+              src={asset('/characters/hani-chat.webp')}
               alt="말풍선과 함께 이야기하는 하니 캐릭터"
               width={996}
               height={1000}

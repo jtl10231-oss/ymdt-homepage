@@ -1,10 +1,11 @@
 'use client';
 
+import { BRAND, asset } from '@/lib/site';
+
 import { useEffect, useRef } from 'react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react';
 import Button from '@/components/site/Button';
 import Container from '@/components/site/Container';
-import { BRAND } from '@/lib/site';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -41,13 +42,13 @@ export default function HomeHero() {
           loop
           playsInline
           preload="metadata"
-          poster="/media/hero-thread-poster.webp"
+          poster={asset('/media/hero-thread-poster.webp')}
           aria-hidden
         >
-          <source src="/media/hero-thread-sm.webm" type="video/webm" media="(max-width: 767px)" />
-          <source src="/media/hero-thread-sm.mp4" type="video/mp4" media="(max-width: 767px)" />
-          <source src="/media/hero-thread.webm" type="video/webm" />
-          <source src="/media/hero-thread.mp4" type="video/mp4" />
+          <source src={asset('/media/hero-thread-sm.webm')} type="video/webm" media="(max-width: 767px)" />
+          <source src={asset('/media/hero-thread-sm.mp4')} type="video/mp4" media="(max-width: 767px)" />
+          <source src={asset('/media/hero-thread.webm')} type="video/webm" />
+          <source src={asset('/media/hero-thread.mp4')} type="video/mp4" />
         </video>
       </motion.div>
       {/* 먹빛 덮개: 글자가 읽히도록 왼쪽과 아래를 눌러 준다 */}

@@ -1,4 +1,5 @@
 import data from './screens.json';
+import { asset } from './site';
 
 export type Screen = { src: string; w: number; h: number; top: string };
 export type ScreenKey = keyof typeof data;
@@ -6,7 +7,8 @@ export type ScreenKey = keyof typeof data;
 export const screens = data as Record<ScreenKey, Screen>;
 
 export function screen(key: ScreenKey): Screen {
-  return screens[key];
+  const s = screens[key];
+  return { ...s, src: asset(s.src) };
 }
 
 /** 화면 상단색이 어두우면 상태바 글자를 밝게 */

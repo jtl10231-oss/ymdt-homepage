@@ -1,10 +1,10 @@
+import { asset, mailto } from '@/lib/site';
 import Container from '@/components/site/Container';
 import { EditorialBar } from '@/components/site/SectionHead';
 import Button from '@/components/site/Button';
 import Reveal, { Stagger, StaggerItem } from '@/components/motion/Reveal';
 import PhoneFrame from '@/components/frames/PhoneFrame';
 import HaniAppIcon from '@/components/brand/HaniAppIcon';
-import { mailto } from '@/lib/site';
 import { cn } from '@/lib/utils';
 import type { ScreenKey } from '@/lib/screens';
 
@@ -12,7 +12,7 @@ function Mascot({ src, alt, className, float = true }: { src: string; alt: strin
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={src}
+      src={src.startsWith('/') ? asset(src) : src}
       alt={alt}
       loading="lazy"
       decoding="async"
@@ -27,9 +27,9 @@ export function AppHero() {
     <section className="relative overflow-hidden bg-[radial-gradient(120%_90%_at_80%_20%,#efe6ff_0%,#f7f3ff_38%,#fbfaf6_72%)] pt-28 pb-20 md:pt-36 md:pb-28">
       {/* 장식: 달·반짝임·하트 (사주앱 에셋) */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/brand/deco-moon.svg" alt="" aria-hidden className="absolute top-[18%] right-[8%] hidden w-14 opacity-80 animate-drift md:block" style={{ animationDelay: '1.2s' }} />
+      <img src={asset('/brand/deco-moon.svg')} alt="" aria-hidden className="absolute top-[18%] right-[8%] hidden w-14 opacity-80 animate-drift md:block" style={{ animationDelay: '1.2s' }} />
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/brand/deco-sparkles.svg" alt="" aria-hidden className="absolute top-[58%] left-[46%] hidden w-10 opacity-70 animate-drift lg:block" style={{ animationDelay: '2.4s' }} />
+      <img src={asset('/brand/deco-sparkles.svg')} alt="" aria-hidden className="absolute top-[58%] left-[46%] hidden w-10 opacity-70 animate-drift lg:block" style={{ animationDelay: '2.4s' }} />
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_1fr]">
           <div>
@@ -275,7 +275,7 @@ const FEATURES: Feature[] = [
             <li key={m.f} className="group flex flex-1 flex-col items-center text-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`/moods/${m.f}.svg`}
+                src={asset(`/moods/${m.f}.svg`)}
                 alt=""
                 aria-hidden
                 width={64}
@@ -373,7 +373,7 @@ export function Feelings() {
                 <StaggerItem key={e.f} className="group flex flex-col items-center text-center">
                   <span className="flex size-16 items-center justify-center rounded-full bg-paper-subtle transition-[transform,background-color] duration-500 ease-hani group-hover:-translate-y-1 group-hover:bg-brand-subtle sm:size-20">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={`/moods/${e.f}.svg`} alt="" aria-hidden width={64} height={64} className="size-12 sm:size-14" />
+                    <img src={asset(`/moods/${e.f}.svg`)} alt="" aria-hidden width={64} height={64} className="size-12 sm:size-14" />
                   </span>
                   <span className="mt-2.5 text-[12px] text-ink-sub sm:text-[13px]">{e.l}</span>
                 </StaggerItem>

@@ -1,8 +1,8 @@
+import { CONTACT_EMAIL, asset, mailto } from '@/lib/site';
 import Container from '@/components/site/Container';
 import Button from '@/components/site/Button';
 import Reveal from '@/components/motion/Reveal';
 import MandarinDucks from '@/components/brand/MandarinDucks';
-import { CONTACT_EMAIL, mailto } from '@/lib/site';
 import { cn } from '@/lib/utils';
 
 // 밤빛 비단 위 금실 — 문의 섹션 (두 페이지 공용)
@@ -26,7 +26,7 @@ export default function ContactCTA({
   return (
     <section id={id} data-header="night" className={cn('relative isolate overflow-hidden bg-night py-28 md:py-40', className)}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/images/thread-night.webp" alt="" aria-hidden className="absolute inset-0 -z-10 h-full w-full object-cover opacity-45" loading="lazy" />
+      <img src={asset('/images/thread-night.webp')} alt="" aria-hidden className="absolute inset-0 -z-10 h-full w-full object-cover opacity-45" loading="lazy" />
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(7,3,26,.92)_0%,rgba(7,3,26,.55)_45%,rgba(7,3,26,.94)_100%)]" aria-hidden />
       <Container className="text-center">
         <Reveal>

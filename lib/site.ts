@@ -1,3 +1,12 @@
+/**
+ * 배포 경로 — GitHub Pages 기본 주소처럼 하위 경로(/ymdt-homepage)에 올릴 때 빌드 환경변수로 받는다.
+ * 로컬 개발에서는 비워 두면 된다.
+ */
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://jtl10231-oss.github.io/ymdt-homepage';
+/** public 폴더 파일 경로에 배포 경로를 붙인다: asset('/media/a.mp4') */
+export const asset = (p: string) => `${BASE_PATH}${p}`;
+
 export const CONTACT_EMAIL = 'hani@ymdt.io';
 
 /** YMDT 대표 문장 — 바꿀 때는 여기만 고치면 히어로·푸터·탭 제목·공유 정보가 함께 바뀐다 */

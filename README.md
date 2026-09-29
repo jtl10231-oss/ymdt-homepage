@@ -19,6 +19,13 @@ npm run dev      # http://localhost:5310
 npm run build    # 정적 결과물 → out/
 ```
 
+## 배포
+
+- 주소: https://jtl10231-oss.github.io/ymdt-homepage/
+- `main`에 푸시하면 GitHub Actions(`.github/workflows/deploy.yml`)가 빌드해서 GitHub Pages에 자동 배포한다.
+- 하위 경로 배포라 `NEXT_PUBLIC_BASE_PATH`(예: `/ymdt-homepage`)를 빌드 때 받는다. public 파일 경로는 `asset()`(`lib/site.ts`)으로 감싼다.
+- ymdt.io 도메인에는 연결하지 않는다 (기존 사이트 유지).
+
 ## 기술 스택
 
 Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · shadcn/ui(모바일 메뉴 시트) · Motion
