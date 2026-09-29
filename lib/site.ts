@@ -7,6 +7,9 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://jtl10231-os
 /** public 폴더 파일 경로에 배포 경로를 붙인다: asset('/media/a.mp4') */
 export const asset = (p: string) => `${BASE_PATH}${p}`;
 
+/** 법인명 — 브랜드 표기는 YMDT, 법인 표기는 이 값 */
+export const COMPANY_LEGAL_NAME = '와이엠디티주식회사';
+
 export const CONTACT_EMAIL = 'hani@ymdt.io';
 
 /** YMDT 대표 문장 — 바꿀 때는 여기만 고치면 히어로·푸터·탭 제목·공유 정보가 함께 바뀐다 */

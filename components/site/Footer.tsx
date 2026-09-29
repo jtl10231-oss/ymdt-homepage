@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import YmdtLogo from '@/components/brand/YmdtLogo';
 import HaniWordmark from '@/components/brand/HaniWordmark';
-import { BRAND, CONTACT_EMAIL, mailto } from '@/lib/site';
+import { BRAND, COMPANY_LEGAL_NAME, CONTACT_EMAIL, mailto } from '@/lib/site';
 
 export default function Footer() {
   return (
@@ -29,7 +29,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="mx-auto flex w-full max-w-[1320px] flex-col items-start justify-between gap-4 border-t border-white/8 px-5 py-7 text-[12.5px] text-white/35 sm:flex-row sm:items-center sm:px-8 lg:px-12">
-        <span>© 2026 YMDT 주식회사. All rights reserved.</span>
+        <span>© 2026 {COMPANY_LEGAL_NAME}. All rights reserved.</span>
         <HaniWordmark height={12} className="text-white/35" accent="var(--color-champagne)" />
       </div>
     </footer>
