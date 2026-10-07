@@ -10,6 +10,7 @@ Next.js(App Router) 정적 사이트로, 빌드 결과물(`out/`)을 어떤 정�
 | `/` | 갈림길 — 왼쪽 "한 사람을 깊이 · HANI 앱", 오른쪽 "두 사람을 가깝게 · HANI MatchOS" 중 골라 들어간다 |
 | `/matchos/` | HANI MatchOS — 고민 6, 해결 3, 크로스매칭 성좌, 매칭풀 차트, 활용 사례, 협업 절차, 실제 화면 쇼케이스, 사주궁합, 신뢰, 매출, 파트너십 |
 | `/hani-app/` | HANI 앱 — 인사이트, 하늬와 대화, 다이어리, 관계, 캐릭터, 철학 |
+| `/support/` | HANI 앱 고객지원 — 문의 이메일(hani@ymdt.io), 문의 전 확인 정보, 자주 묻는 질문(로그인·구독 해지·환불·계정 삭제 등). 실제 주소 `https://www.ymdt.io/support/` |
 
 ## 실행
 
@@ -30,6 +31,7 @@ npm ci                                   # Node 22 이상
 NEXT_PUBLIC_SITE_URL=https://실제도메인 npm run build   # → out/ 생성 (약 17MB)
 ```
 
+- 열려야 하는 주소: `/`, `/matchos/`, `/hani-app/`, `/support/` (고객지원 주소는 외부에 등록될 수 있으니 바꾸지 않는다).
 - **도메인 루트에 올릴 때**(예: `https://example.com/`): 위 명령 그대로. `out/` 안의 파일을 웹 루트에 복사한다.
 - **하위 경로에 올릴 때**(예: `https://example.com/ymdt/`): `NEXT_PUBLIC_BASE_PATH=/ymdt` 도 함께 지정해서 빌드한다.
 - `NEXT_PUBLIC_SITE_URL`은 카카오톡·SNS 공유 미리보기 이미지 주소에 쓰인다. 빠뜨리면 GitHub Pages 주소가 들어가니 꼭 실제 도메인으로 지정한다.

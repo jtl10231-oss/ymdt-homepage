@@ -23,7 +23,18 @@ export const BRAND = {
   description:
     'YMDT는 사람을 이해하는 기술을 만듭니다. 나를 깊이 알아가는 HANI 앱, 결혼정보업체를 위한 CRM·크로스매칭 플랫폼 HANI MatchOS.',
 } as const;
-export const mailto = (subject: string) => `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}`;
+export const mailto = (subject: string, body?: string) =>
+  `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}${
+    body ? `&body=${encodeURIComponent(body.replace(/\n/g, '\r\n'))}` : ''
+  }`;
+
+/** 고객지원 페이지 — 실제 주소: https://www.ymdt.io/support/ (외부에 등록되는 주소라 경로를 바꾸지 말 것) */
+export const SUPPORT_PATH = '/support/';
+/** 문의 메일을 누르면 미리 채워지는 양식 — 답변에 필요한 정보를 한 번에 받기 위함 */
+export const SUPPORT_MAIL_SUBJECT = '[HANI 앱 문의]';
+export const SUPPORT_MAIL_BODY =
+  '안녕하세요. HANI 앱 문의드립니다.\n\n- 로그인 방식(카카오 / Google / Apple):\n- 기기와 OS 버전:\n- 앱 버전:\n- 문의 내용:\n';
+export const supportMailto = () => mailto(SUPPORT_MAIL_SUBJECT, SUPPORT_MAIL_BODY);
 
 export const NAV = [
   { href: '/hani-app/', label: 'HANI 앱', sub: '한 사람을 깊이 · 자기이해 앱' },
@@ -33,6 +44,7 @@ export const NAV = [
 /** 페이지마다 머리 버튼을 그 제품에 맞게 */
 export function headerCta(pathname: string) {
   if (pathname.startsWith('/hani-app')) return { label: '앱 소식 받기', href: mailto('HANI 앱 소식 받기') };
+  if (pathname.startsWith('/support')) return { label: '이메일 문의', href: supportMailto() };
   if (pathname.startsWith('/matchos')) return { label: '도입 상담', href: mailto('HANI MatchOS 도입 상담') };
   return { label: '문의하기', href: mailto('YMDT 문의') };
 }

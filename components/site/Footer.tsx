@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import YmdtLogo from '@/components/brand/YmdtLogo';
 import HaniWordmark from '@/components/brand/HaniWordmark';
-import { BRAND, COMPANY_LEGAL_NAME, CONTACT_EMAIL, mailto } from '@/lib/site';
+import { BRAND, COMPANY_LEGAL_NAME, CONTACT_EMAIL, SUPPORT_PATH, mailto } from '@/lib/site';
 
 export default function Footer() {
   return (
@@ -26,6 +26,9 @@ export default function Footer() {
             {CONTACT_EMAIL}
           </a>
           <p className="mt-2 text-[13px] text-white/40">도입 상담 · 제품 시연</p>
+          <Link className="mt-5 inline-block text-[14.5px] hover:text-white" href={SUPPORT_PATH}>
+            HANI 앱 고객지원
+          </Link>
         </div>
       </div>
       <div className="mx-auto flex w-full max-w-[1320px] flex-col items-start justify-between gap-4 border-t border-white/8 px-5 py-7 text-[12.5px] text-white/35 sm:flex-row sm:items-center sm:px-8 lg:px-12">
