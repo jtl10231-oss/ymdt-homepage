@@ -41,12 +41,16 @@ export const NAV = [
   { href: '/matchos/', label: 'HANI MatchOS', sub: '두 사람을 가깝게 · 결혼정보업체 플랫폼' },
 ] as const;
 
-/** 페이지마다 머리 버튼을 그 제품에 맞게 */
-export function headerCta(pathname: string) {
-  if (pathname.startsWith('/hani-app')) return { label: '앱 소식 받기', href: mailto('HANI 앱 소식 받기') };
-  if (pathname.startsWith('/support')) return { label: '이메일 문의', href: supportMailto() };
-  if (pathname.startsWith('/matchos')) return { label: '도입 상담', href: mailto('HANI MatchOS 도입 상담') };
-  return { label: '문의하기', href: mailto('YMDT 문의') };
+/**
+ * 페이지마다 머리 버튼을 그 제품에 맞게.
+ * internal이 true면 사이트 안 페이지로 이동(Link), 아니면 메일 앱을 연다.
+ */
+export function headerCta(pathname: string): { label: string; href: string; internal: boolean } {
+  if (pathname.startsWith('/hani-app')) return { label: '앱 소식 받기', href: mailto('HANI 앱 소식 받기'), internal: false };
+  if (pathname.startsWith('/support')) return { label: '이메일 문의', href: supportMailto(), internal: false };
+  if (pathname.startsWith('/matchos')) return { label: '도입 상담', href: mailto('HANI MatchOS 도입 상담'), internal: false };
+  // 홈: 고객지원 페이지로 안내
+  return { label: '문의하기', href: SUPPORT_PATH, internal: true };
 }
 
 /** 페이지별 공유(OG) 메타데이터 — 레이아웃 값이 덮어써지지 않도록 전부 채운다 */

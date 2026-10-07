@@ -2,11 +2,27 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { NAV, CONTACT_EMAIL, headerCta } from '@/lib/site';
 import YmdtLogo from '@/components/brand/YmdtLogo';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger, SheetClose, SheetDescription } from '@/components/ui/sheet';
+
+/** 머리 버튼: 사이트 안 페이지면 Link(배포 경로 자동 적용), 메일이면 일반 링크 */
+const CtaLink = forwardRef<
+  HTMLAnchorElement,
+  { cta: ReturnType<typeof headerCta>; className?: string; children: React.ReactNode } & React.AnchorHTMLAttributes<HTMLAnchorElement>
+>(function CtaLink({ cta, className, children, ...rest }, ref) {
+  return cta.internal ? (
+    <Link ref={ref} href={cta.href} className={className} {...rest}>
+      {children}
+    </Link>
+  ) : (
+    <a ref={ref} href={cta.href} className={className} {...rest}>
+      {children}
+    </a>
+  );
+});
 
 export default function Header({ tone = 'paper', solid = false }: { tone?: 'paper' | 'night'; solid?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
@@ -82,8 +98,8 @@ export default function Header({ tone = 'paper', solid = false }: { tone?: 'pape
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
-            href={cta.href}
+          <CtaLink
+            cta={cta}
             className={cn(
               'hidden h-10 items-center rounded-hani-btn px-4 text-[14px] font-semibold transition-colors duration-300 sm:inline-flex',
               light
@@ -92,7 +108,7 @@ export default function Header({ tone = 'paper', solid = false }: { tone?: 'pape
             )}
           >
             {cta.label}
-          </a>
+          </CtaLink>
           <Sheet>
             <SheetTrigger
               aria-label="메뉴 열기"
@@ -123,12 +139,14 @@ export default function Header({ tone = 'paper', solid = false }: { tone?: 'pape
                     </SheetClose>
                   ))}
                 </nav>
-                <a
-                  href={cta.href}
-                  className="mt-auto inline-flex h-14 items-center justify-center rounded-hani-btn bg-brand text-[15px] font-semibold text-paper shadow-hani-btn"
-                >
-                  {cta.label} · {CONTACT_EMAIL}
-                </a>
+                <SheetClose asChild>
+                  <CtaLink
+                    cta={cta}
+                    className="mt-auto inline-flex h-14 items-center justify-center rounded-hani-btn bg-brand text-[15px] font-semibold text-paper shadow-hani-btn"
+                  >
+                    {cta.internal ? cta.label : `${cta.label} · ${CONTACT_EMAIL}`}
+                  </CtaLink>
+                </SheetClose>
               </div>
             </SheetContent>
           </Sheet>
