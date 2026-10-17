@@ -10,6 +10,21 @@ export const asset = (p: string) => `${BASE_PATH}${p}`;
 /** 법인명 — 브랜드 표기는 YMDT, 법인 표기는 이 값 */
 export const COMPANY_LEGAL_NAME = '와이엠디티주식회사';
 
+/**
+ * 푸터에 표시하는 사업자 정보.
+ * 출처: HANI 앱 이용약관 제26조(고객센터 및 사업자 정보). 번호를 바꿀 때는 앱 약관과 함께 맞출 것.
+ * 법인명(상호)은 위 COMPANY_LEGAL_NAME을 쓴다.
+ */
+export const BUSINESS = {
+  ceo: '이정택',
+  bizNo: '682-87-03697',
+  mailOrderNo: '2026-경남진주-0031',
+  address: '경상남도 진주시 솔밭로 142-1, 2층 에이31호 (상대동)',
+  phone: '010-5885-3644',
+} as const;
+/** 공정거래위원회 통신판매사업자 조회 (사업자등록번호 숫자만) */
+export const FTC_LOOKUP_URL = `https://www.ftc.go.kr/bizCommPop.do?wrkr_no=${BUSINESS.bizNo.replace(/-/g, '')}`;
+
 export const CONTACT_EMAIL = 'hani@ymdt.io';
 
 /** YMDT 대표 문장 — 바꿀 때는 여기만 고치면 히어로·푸터·탭 제목·공유 정보가 함께 바뀐다 */

@@ -1,7 +1,16 @@
 import Link from 'next/link';
 import YmdtLogo from '@/components/brand/YmdtLogo';
 import HaniWordmark from '@/components/brand/HaniWordmark';
-import { BRAND, COMPANY_LEGAL_NAME, CONTACT_EMAIL, SUPPORT_PATH, mailto } from '@/lib/site';
+import { BRAND, BUSINESS, COMPANY_LEGAL_NAME, CONTACT_EMAIL, FTC_LOOKUP_URL, SUPPORT_PATH, mailto } from '@/lib/site';
+
+function Info({ label, value }: { label: string; value: React.ReactNode }) {
+  return (
+    <div className="flex gap-2">
+      <dt className="shrink-0 text-white/45">{label}</dt>
+      <dd className="text-white/70">{value}</dd>
+    </div>
+  );
+}
 
 export default function Footer() {
   return (
@@ -31,9 +40,36 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <div className="mx-auto flex w-full max-w-[1320px] flex-col items-start justify-between gap-4 border-t border-white/8 px-5 py-7 text-[12.5px] text-white/35 sm:flex-row sm:items-center sm:px-8 lg:px-12">
-        <span>© 2026 {COMPANY_LEGAL_NAME}. All rights reserved.</span>
-        <HaniWordmark height={12} className="text-white/35" accent="var(--color-champagne)" />
+      <div className="mx-auto w-full max-w-[1320px] border-t border-white/8 px-5 py-8 sm:px-8 lg:px-12">
+        <h2 className="sr-only">사업자 정보</h2>
+        <dl className="flex flex-wrap gap-x-7 gap-y-2 text-[12.5px] leading-relaxed">
+          <Info label="상호" value={COMPANY_LEGAL_NAME} />
+          <Info label="대표자" value={BUSINESS.ceo} />
+          <Info label="사업자등록번호" value={BUSINESS.bizNo} />
+          <Info
+            label="통신판매업 신고번호"
+            value={
+              <>
+                {BUSINESS.mailOrderNo}
+                <a
+                  href={FTC_LOOKUP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="ml-2 underline decoration-white/25 underline-offset-2 hover:text-white hover:decoration-white/60"
+                >
+                  사업자정보확인
+                </a>
+              </>
+            }
+          />
+          <Info label="주소" value={BUSINESS.address} />
+          <Info label="전화" value={<a className="hover:text-white" href={`tel:${BUSINESS.phone.replace(/-/g, '')}`}>{BUSINESS.phone}</a>} />
+          <Info label="이메일" value={<a className="hover:text-white" href={mailto('YMDT 문의')}>{CONTACT_EMAIL}</a>} />
+        </dl>
+        <div className="mt-7 flex flex-col items-start justify-between gap-4 text-[12.5px] text-white/45 sm:flex-row sm:items-center">
+          <span>© 2026 {COMPANY_LEGAL_NAME}. All rights reserved.</span>
+          <HaniWordmark height={12} className="text-white/35" accent="var(--color-champagne)" />
+        </div>
       </div>
     </footer>
   );
